@@ -20,6 +20,7 @@ class test {
                 
         Imgproc.cvtColor(image, image, Imgproc.COLOR_BGR2GRAY);
         Highgui.imwrite("gray.png", image);
+
         Size size = new Size(image.cols()/2, image.rows()/2);
         Imgproc.pyrDown(image, pyr, size);
         Imgproc.pyrUp(pyr, timg, image.size());
@@ -29,7 +30,7 @@ class test {
 }
 
 
-public class FormProcesser {
+public class opecvExamp {
     public static void main(String[] args) {
         System.out.println("test");
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);

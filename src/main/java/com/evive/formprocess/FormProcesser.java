@@ -11,7 +11,6 @@ class test {
 
     public void readImage() {
         Mat image = Highgui.imread(getClass().getResource("/lena.png").getPath());
-        
         int distPercentageThreshold = 2;
         int distThreshold = image.cols() * distPercentageThreshold / 100;
         Mat pyr = new Mat();

@@ -1,0 +1,26 @@
+20 Jul 2015 14:42:28,947 ERROR  [main] GetRectangles:75- src/main/resources/input.txt
+java.nio.file.NoSuchFileException: src/main/resources/input.txt
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86) ~[?:1.8.0_45]
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102) ~[?:1.8.0_45]
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107) ~[?:1.8.0_45]
+	at sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:214) ~[?:1.8.0_45]
+	at java.nio.file.Files.newByteChannel(Files.java:361) ~[?:1.8.0_45]
+	at java.nio.file.Files.newByteChannel(Files.java:407) ~[?:1.8.0_45]
+	at java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:384) ~[?:1.8.0_45]
+	at java.nio.file.Files.newInputStream(Files.java:152) ~[?:1.8.0_45]
+	at java.nio.file.Files.newBufferedReader(Files.java:2784) ~[?:1.8.0_45]
+	at java.nio.file.Files.newBufferedReader(Files.java:2816) ~[?:1.8.0_45]
+	at com.evive.formprocess.GetRectangles.assignLabels(GetRectangles.java:70) ~[classes/:?]
+	at com.evive.formprocess.GetRectangles.main(GetRectangles.java:95) ~[classes/:?]
+20 Jul 2015 14:43:23,527  INFO  [main] GetRectangles:87- Current_Date/ : 123456
+20 Jul 2015 14:43:23,529  INFO  [main] GetRectangles:87- Fasting_Glucose/ : 364
+20 Jul 2015 14:43:23,529  INFO  [main] GetRectangles:87- Waist_Circumference/ : 73
+20 Jul 2015 14:43:23,529  INFO  [main] GetRectangles:87- Total_Cholesterol/ : 678
+20 Jul 2015 14:43:23,529  INFO  [main] GetRectangles:87- Triglycerides_Systolic/ : 453
+20 Jul 2015 14:43:23,529  INFO  [main] GetRectangles:87- Weight/ : 123
+20 Jul 2015 14:43:23,529  INFO  [main] GetRectangles:87- Blood_Pressure_Diastolic/ : 456
+20 Jul 2015 14:43:23,529  INFO  [main] GetRectangles:87- LDL_Cholesterol/ : 364
+20 Jul 2015 14:43:23,530  INFO  [main] GetRectangles:87- Height/ : 736
+20 Jul 2015 14:43:23,530  INFO  [main] GetRectangles:87- Blood_Pressure_Systolic/ : 784
+20 Jul 2015 14:43:23,530  INFO  [main] GetRectangles:87- HDL_Cholesterol/ : 531
+20 Jul 2015 14:43:23,530  INFO  [main] GetRectangles:87- Date_of_annual_physical/ : 234563

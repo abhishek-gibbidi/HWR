@@ -1,50 +1,35 @@
-20 Jul 2015 14:42:28,947 ERROR  [main] GetRectangles:75- src/main/resources/input.txt
-java.nio.file.NoSuchFileException: src/main/resources/input.txt
-	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86) ~[?:1.8.0_45]
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102) ~[?:1.8.0_45]
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107) ~[?:1.8.0_45]
-	at sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:214) ~[?:1.8.0_45]
-	at java.nio.file.Files.newByteChannel(Files.java:361) ~[?:1.8.0_45]
-	at java.nio.file.Files.newByteChannel(Files.java:407) ~[?:1.8.0_45]
-	at java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:384) ~[?:1.8.0_45]
-	at java.nio.file.Files.newInputStream(Files.java:152) ~[?:1.8.0_45]
-	at java.nio.file.Files.newBufferedReader(Files.java:2784) ~[?:1.8.0_45]
-	at java.nio.file.Files.newBufferedReader(Files.java:2816) ~[?:1.8.0_45]
-	at com.evive.formprocess.GetRectangles.assignLabels(GetRectangles.java:70) ~[classes/:?]
-	at com.evive.formprocess.GetRectangles.main(GetRectangles.java:95) ~[classes/:?]
-20 Jul 2015 14:43:23,527  INFO  [main] GetRectangles:87- Current_Date/ : 123456
-20 Jul 2015 14:43:23,529  INFO  [main] GetRectangles:87- Fasting_Glucose/ : 364
-20 Jul 2015 14:43:23,529  INFO  [main] GetRectangles:87- Waist_Circumference/ : 73
-20 Jul 2015 14:43:23,529  INFO  [main] GetRectangles:87- Total_Cholesterol/ : 678
-20 Jul 2015 14:43:23,529  INFO  [main] GetRectangles:87- Triglycerides_Systolic/ : 453
-20 Jul 2015 14:43:23,529  INFO  [main] GetRectangles:87- Weight/ : 123
-20 Jul 2015 14:43:23,529  INFO  [main] GetRectangles:87- Blood_Pressure_Diastolic/ : 456
-20 Jul 2015 14:43:23,529  INFO  [main] GetRectangles:87- LDL_Cholesterol/ : 364
-20 Jul 2015 14:43:23,530  INFO  [main] GetRectangles:87- Height/ : 736
-20 Jul 2015 14:43:23,530  INFO  [main] GetRectangles:87- Blood_Pressure_Systolic/ : 784
-20 Jul 2015 14:43:23,530  INFO  [main] GetRectangles:87- HDL_Cholesterol/ : 531
-20 Jul 2015 14:43:23,530  INFO  [main] GetRectangles:87- Date_of_annual_physical/ : 234563
-20 Jul 2015 15:02:02,810  INFO  [main] GetRectangles:87- Current_Date/ : 123456
-20 Jul 2015 15:02:02,814  INFO  [main] GetRectangles:87- Fasting_Glucose/ : 364
-20 Jul 2015 15:02:02,814  INFO  [main] GetRectangles:87- Waist_Circumference/ : 73
-20 Jul 2015 15:02:02,814  INFO  [main] GetRectangles:87- Total_Cholesterol/ : 678
-20 Jul 2015 15:02:02,815  INFO  [main] GetRectangles:87- Triglycerides_Systolic/ : 453
-20 Jul 2015 15:02:02,815  INFO  [main] GetRectangles:87- Weight/ : 123
-20 Jul 2015 15:02:02,815  INFO  [main] GetRectangles:87- Blood_Pressure_Diastolic/ : 456
-20 Jul 2015 15:02:02,815  INFO  [main] GetRectangles:87- LDL_Cholesterol/ : 364
-20 Jul 2015 15:02:02,816  INFO  [main] GetRectangles:87- Height/ : 736
-20 Jul 2015 15:02:02,816  INFO  [main] GetRectangles:87- Blood_Pressure_Systolic/ : 784
-20 Jul 2015 15:02:02,816  INFO  [main] GetRectangles:87- HDL_Cholesterol/ : 531
-20 Jul 2015 15:02:02,816  INFO  [main] GetRectangles:87- Date_of_annual_physical/ : 234563
-20 Jul 2015 15:19:56,915  INFO  [main] GetRectangles:87- Current_Date/ : 123456
-20 Jul 2015 15:19:56,916  INFO  [main] GetRectangles:87- Fasting_Glucose/ : 364
-20 Jul 2015 15:19:56,916  INFO  [main] GetRectangles:87- Waist_Circumference/ : 73
-20 Jul 2015 15:19:56,916  INFO  [main] GetRectangles:87- Total_Cholesterol/ : 678
-20 Jul 2015 15:19:56,916  INFO  [main] GetRectangles:87- Triglycerides_Systolic/ : 453
-20 Jul 2015 15:19:56,916  INFO  [main] GetRectangles:87- Weight/ : 123
-20 Jul 2015 15:19:56,916  INFO  [main] GetRectangles:87- Blood_Pressure_Diastolic/ : 456
-20 Jul 2015 15:19:56,916  INFO  [main] GetRectangles:87- LDL_Cholesterol/ : 364
-20 Jul 2015 15:19:56,916  INFO  [main] GetRectangles:87- Height/ : 736
-20 Jul 2015 15:19:56,916  INFO  [main] GetRectangles:87- Blood_Pressure_Systolic/ : 784
-20 Jul 2015 15:19:56,916  INFO  [main] GetRectangles:87- HDL_Cholesterol/ : 531
-20 Jul 2015 15:19:56,916  INFO  [main] GetRectangles:87- Date_of_annual_physical/ : 234563
+21 Jul 2015 10:05:07,220  INFO  [main] FeactureExtractor:55- Des Mat [ 144*1*CV_32FC1, isCont=true, isSubmat=false, nativeObj=0x7f5a98538120, dataAddr=0x7f5a985381a0 ]
+21 Jul 2015 10:07:54,991  INFO  [main] FeactureExtractor:60- Loading Image
+21 Jul 2015 10:07:55,001  INFO  [main] FeactureExtractor:66- Computing HOG
+21 Jul 2015 10:07:55,117  INFO  [main] FeactureExtractor:55- Des cols 1
+21 Jul 2015 10:08:32,186  INFO  [main] FeactureExtractor:60- Loading Image
+21 Jul 2015 10:08:32,198  INFO  [main] FeactureExtractor:66- Computing HOG
+21 Jul 2015 10:08:32,313  INFO  [main] FeactureExtractor:55- Des cols Mat [ 144*1*CV_32FC1, isCont=true, isSubmat=false, nativeObj=0x7f19a051d550, dataAddr=0x7f19a051d2f0 ]
+21 Jul 2015 10:11:43,251  INFO  [main] FeactureExtractor:59- Loading Image
+21 Jul 2015 10:11:43,262  INFO  [main] FeactureExtractor:65- Computing HOG
+21 Jul 2015 10:11:43,378  INFO  [main] FeactureExtractor:55- Des size 144 
+21 Jul 2015 10:12:13,995  INFO  [main] FeactureExtractor:59- Loading Image
+21 Jul 2015 10:12:14,005  INFO  [main] FeactureExtractor:65- Computing HOG
+21 Jul 2015 10:12:14,126  INFO  [main] FeactureExtractor:55- Des size [0.17447662, 0.008549093, 0.011165081, 0.009669902, 0.25387567, 0.029275585, 0.045080505, 0.04172129, 0.19139796, 0.2644835, 0.09019265, 0.105286, 0.07375827, 0.2644835, 0.05728969, 0.08614271, 0.06120195, 0.2644835, 0.25521937, 0.06517981, 0.078688644, 0.06311075, 0.2644835, 0.032128036, 0.046529975, 0.045710985, 0.21660848, 0.2644835, 0.22853507, 0.2644835, 0.19253625, 0.2644835, 0.121001095, 0.13180041, 0.09544425, 0.2644835, 0.11361317, 0.04159568, 0.05370277, 0.06101706, 0.2497015, 0.049502887, 0.21813056, 0.11965602, 0.13903578, 0.2375972, 0.16449428, 0.23520382, 0.096886046, 0.2497015, 0.07598084, 0.0931262, 0.078459725, 0.21100512, 0.20849063, 0.109267354, 0.18063104, 0.10416067, 0.2497015, 0.042285632, 0.07872093, 0.0898964, 0.20508793, 0.2497015, 0.2497015, 0.2497015, 0.107172005, 0.2497015, 0.045170505, 0.07376378, 0.066708736, 0.2497015, 0.22853117, 0.104715385, 0.16705416, 0.105104774, 0.22853117, 0.09334096, 0.16564418, 0.15371321, 0.22853117, 0.22853117, 0.121178195, 0.12120367, 0.08171139, 0.22853117, 0.087630235, 0.19564725, 0.13061447, 0.22853117, 0.22853117, 0.1380897, 0.18446445, 0.08741592, 0.22853117, 0.095261805, 0.12026728, 0.109922044, 0.2272171, 0.22853117, 0.10597347, 0.10366246, 0.06578016, 0.22853117, 0.07286046, 0.15566115, 0.103240706, 0.22846681, 0.26948306, 0.10624141, 0.13384621, 0.076506756, 0.26948306, 0.062732525, 0.05751068, 0.050222274, 0.26948306, 0.24567729, 0.05269655, 0.08079582, 0.028181724, 0.26948306, 0.088449195, 0.14387028, 0.09916169, 0.26948306, 0.26948306, 0.070131175, 0.09742907, 0.035009127, 0.26948306, 0.013423027, 0.03760658, 0.031783238, 0.26948306, 0.26948306, 0.045035094, 0.07943142, 0.02654381, 0.26948306, 0.033410948, 0.11303905, 0.060543336, 0.26948306] 
+21 Jul 2015 11:20:45,383  INFO  [main] ProcessForm:315- {3.0, 8.0}, {4.0, 4.0}, {1.0, 3.0}, {1.0, 3.0}
+21 Jul 2015 11:20:45,383  INFO  [main] ProcessForm:322- Before: [[{51.0, 53.0}, {52.0, 55.0}, {53.0, 58.0}, {54.0, 54.0}], [{1.0, 3.0}, {2.0, 5.0}, {3.0, 8.0}, {4.0, 4.0}], [{11.0, 13.0}, {12.0, 15.0}, {13.0, 18.0}, {14.0, 14.0}]]
+21 Jul 2015 11:22:13,865  INFO  [main] ProcessForm:315- {3.0, 8.0}, {4.0, 4.0}, {1.0, 3.0}, {1.0, 3.0}
+21 Jul 2015 11:22:13,866  INFO  [main] ProcessForm:322- Before: [[{51.0, 53.0}, {52.0, 55.0}, {53.0, 58.0}, {54.0, 54.0}], [{1.0, 3.0}, {2.0, 5.0}, {3.0, 8.0}, {4.0, 4.0}], [{11.0, 13.0}, {12.0, 15.0}, {13.0, 18.0}, {14.0, 14.0}]]
+21 Jul 2015 11:23:15,989  INFO  [main] ProcessForm:315- {3.0, 8.0}, {4.0, 4.0}, {1.0, 3.0}, {1.0, 3.0}
+21 Jul 2015 11:23:15,990  INFO  [main] ProcessForm:322- Before: [[{51.0, 53.0}, {52.0, 55.0}, {53.0, 58.0}, {54.0, 54.0}], [{1.0, 3.0}, {2.0, 5.0}, {3.0, 8.0}, {4.0, 4.0}], [{11.0, 13.0}, {12.0, 15.0}, {13.0, 18.0}, {14.0, 14.0}]]
+21 Jul 2015 11:23:16,042  INFO  [main] ProcessForm:173- Point: {51.0, 53.0}
+21 Jul 2015 11:23:16,042  INFO  [main] ProcessForm:173- Point: {11.0, 13.0}
+21 Jul 2015 11:23:16,042  INFO  [main] ProcessForm:173- Point: {1.0, 3.0}
+21 Jul 2015 11:23:16,042  INFO  [main] ProcessForm:324- After: [[{51.0, 53.0}, {52.0, 55.0}, {53.0, 58.0}, {54.0, 54.0}], [{11.0, 13.0}, {12.0, 15.0}, {13.0, 18.0}, {14.0, 14.0}], [{1.0, 3.0}, {2.0, 5.0}, {3.0, 8.0}, {4.0, 4.0}]]
+21 Jul 2015 11:23:16,042  INFO  [main] ProcessForm:327- Before: [[{51.0, 53.0}, {52.0, 55.0}, {53.0, 58.0}, {54.0, 54.0}], [{11.0, 13.0}, {12.0, 15.0}, {13.0, 18.0}, {14.0, 14.0}], [{1.0, 3.0}, {2.0, 5.0}, {3.0, 8.0}, {4.0, 4.0}]]
+21 Jul 2015 11:23:16,043  INFO  [main] ProcessForm:329- After: [[{1.0, 3.0}, {2.0, 5.0}, {3.0, 8.0}, {4.0, 4.0}], [{11.0, 13.0}, {12.0, 15.0}, {13.0, 18.0}, {14.0, 14.0}], [{51.0, 53.0}, {52.0, 55.0}, {53.0, 58.0}, {54.0, 54.0}]]
+21 Jul 2015 11:23:16,043  INFO  [main] ProcessForm:334- p1: 3, p2: 4
+21 Jul 2015 11:42:46,616  INFO  [main] ProcessForm:303- {3.0, 8.0}, {4.0, 4.0}, {1.0, 3.0}, {1.0, 3.0}
+21 Jul 2015 11:42:46,617  INFO  [main] ProcessForm:310- Before: [[{51.0, 53.0}, {52.0, 55.0}, {53.0, 58.0}, {54.0, 54.0}], [{1.0, 3.0}, {2.0, 5.0}, {3.0, 8.0}, {4.0, 4.0}], [{11.0, 13.0}, {12.0, 15.0}, {13.0, 18.0}, {14.0, 14.0}]]
+21 Jul 2015 11:42:46,670  INFO  [main] ProcessForm:161- Point: {51.0, 53.0}
+21 Jul 2015 11:42:46,670  INFO  [main] ProcessForm:161- Point: {11.0, 13.0}
+21 Jul 2015 11:42:46,670  INFO  [main] ProcessForm:161- Point: {1.0, 3.0}
+21 Jul 2015 11:42:46,670  INFO  [main] ProcessForm:312- After: [[{51.0, 53.0}, {52.0, 55.0}, {53.0, 58.0}, {54.0, 54.0}], [{11.0, 13.0}, {12.0, 15.0}, {13.0, 18.0}, {14.0, 14.0}], [{1.0, 3.0}, {2.0, 5.0}, {3.0, 8.0}, {4.0, 4.0}]]
+21 Jul 2015 11:42:46,671  INFO  [main] ProcessForm:315- Before: [[{51.0, 53.0}, {52.0, 55.0}, {53.0, 58.0}, {54.0, 54.0}], [{11.0, 13.0}, {12.0, 15.0}, {13.0, 18.0}, {14.0, 14.0}], [{1.0, 3.0}, {2.0, 5.0}, {3.0, 8.0}, {4.0, 4.0}]]
+21 Jul 2015 11:42:46,671  INFO  [main] ProcessForm:317- After: [[{1.0, 3.0}, {2.0, 5.0}, {3.0, 8.0}, {4.0, 4.0}], [{11.0, 13.0}, {12.0, 15.0}, {13.0, 18.0}, {14.0, 14.0}], [{51.0, 53.0}, {52.0, 55.0}, {53.0, 58.0}, {54.0, 54.0}]]
+21 Jul 2015 11:42:46,671  INFO  [main] ProcessForm:322- p1: 3, p2: 4

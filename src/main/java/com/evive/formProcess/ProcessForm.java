@@ -28,7 +28,7 @@ import java.util.Properties;
 public class ProcessForm {
     private static final Logger LOG = LoggerFactory.getLogger(ProcessForm.class);
     private final String propFile = "src/main/resources/data.properties";
-    Properties properties;
+    static Properties properties;
 
     public void getProperties() {
         try (FileInputStream fileInput = new FileInputStream(new File(propFile))) {
@@ -59,7 +59,7 @@ public class ProcessForm {
         return image;
     }
 
-    
+
 
     public void drawSquares(final Mat image, final List<List<MatOfPoint>> squares) {
         for (final List<MatOfPoint> square : squares) {
@@ -67,7 +67,7 @@ public class ProcessForm {
         }
     }
 
-    public void sortCoordArray(final Double[][] array, final int index) {
+    public static void sortCoordArray(final Double[][] array, final int index) {
         for (int i = 1; i < (Integer.valueOf(properties.getProperty("NO_COORDINATES"))); ++i) {
             for (int j = 0; j < (Integer.valueOf(properties.getProperty("NO_COORDINATES"))) - i; ++j) {
                 if (array[j][index] > array[j + 1][index]) {
@@ -83,14 +83,14 @@ public class ProcessForm {
         }
     }
 
-    public int compareDouble(final double pt1, final double pt2) {
+    public static int compareDouble(final double pt1, final double pt2) {
         if (pt1 > pt2) {
             return 0;
         }
         return 1;
     }
 
-    public void formatCoordinatesABCD(final List<Point> rect, final Double[][] coord) {
+    public static void formatCoordinatesABCD(final List<Point> rect, final Double[][] coord) {
         for (int i = 0; i < (Integer.valueOf(properties.getProperty("NO_COORDINATES"))); ++i) {
             final Point pt = rect.get(i);
             coord[i][0] = pt.x;
@@ -255,7 +255,7 @@ public class ProcessForm {
         }
     }
 
-    public int compareCoord(Double[] pt1, Double[] pt2, int threshold) {
+    public static int compareCoord(Double[] pt1, Double[] pt2, int threshold) {
         final double dist = Utils.EUCLIDEAN_DISTANCE(pt1, pt2);
         threshold = threshold * threshold;
         if (dist > threshold) {
@@ -265,7 +265,7 @@ public class ProcessForm {
 
     }
 
-    public int getSmallerRect(Double[][] old_coord, Double[][] new_coord) {
+    public static int getSmallerRect(Double[][] old_coord, Double[][] new_coord) {
         double old_coord_dist = 0.0;
         for (int i = 0; i < Integer.valueOf(properties.getProperty("NO_COORDINATES")); i++) {
             old_coord_dist += Utils.EUCLIDEAN_DISTANCE(old_coord, i);
@@ -364,7 +364,7 @@ public class ProcessForm {
 
     }
 
-    public void storeUniqueRectangles(List<Point> new_square, List<List<Point>> squares, int threshold) {
+    public static void storeUniqueRectangles(List<Point> new_square, List<List<Point>> squares, int threshold) {
         final Double[][] next_coord = new Double[Integer.valueOf(properties.getProperty("NO_COORDINATES"))][2];
         final Double[][] old_coord = new Double[Integer.valueOf(properties.getProperty("NO_COORDINATES"))][2];
         formatCoordinatesABCD(new_square, next_coord);

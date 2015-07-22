@@ -8,6 +8,7 @@ import org.opencv.core.MatOfPoint;
 import org.opencv.core.MatOfPoint2f;
 import org.opencv.core.Point;
 import org.opencv.core.Size;
+import org.opencv.highgui.Highgui;
 import org.opencv.imgproc.Imgproc;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -49,6 +50,7 @@ public class GetRectangles {
         }
 
     }
+
     /**
      * Assign labels to the predicated digits.
      */
@@ -131,13 +133,13 @@ public class GetRectangles {
     /**
      * 
      * @param Mat image
-     * @param List<List<Point> > squares
-     * Given a image this function locates all the squares present in the image.
+     * @param List<List<Point> > squares Given a image this function locates all the squares present in the image.
      */
     public void findSquares(final Mat image, List<List<Point>> squares) {
         squares.clear();
         image.cols();
-        Integer.valueOf(properties.getProperty("distPercentageThreshold"));
+        final int distPercentageThreshold = Integer.valueOf(properties.getProperty("distPercentageThreshold"));
+        final int distThreshold = image.cols() * distPercentageThreshold / 100;
         final Mat pyr = new Mat();
         final Mat gray = new Mat();
         Imgproc.pyrDown(image, pyr, new Size(image.cols() / 2, image.rows() / 2));
@@ -158,7 +160,14 @@ public class GetRectangles {
                     Imgproc.Canny(gray0, gray, 0, CONTRAST_THRESHOLD, 5, false);
                     Imgproc.dilate(gray, gray, new Mat(), new Point(-1, -1), 1);
                 } else {
-                    // gray = gray0 >= (j + 1) * 255 / Integer.valueOf(properties.getProperty("THRESHOLD_LEVEL_TRY"));
+                    for (int rows = 0; rows < image.rows(); rows++) {
+                        for (int cols = 0; cols < image.cols(); cols++) {
+                            if (gray0.get(rows, cols)[0] >= (j + 1) * 255
+                                    / Integer.valueOf(properties.getProperty("THRESHOLD_LEVEL_TRY"))) {
+                                gray.put(rows, cols, gray0.get(rows, cols)[0]);
+                            }
+                        }
+                    }
                 }
                 final Mat hierarchy = new Mat();
                 Imgproc.findContours(gray, contours, hierarchy, Imgproc.RETR_LIST, Imgproc.CHAIN_APPROX_SIMPLE);
@@ -168,15 +177,22 @@ public class GetRectangles {
 
                     Imgproc.approxPolyDP(new MatOfPoint2f(contours.get(k)), approx,
                             Imgproc.arcLength(new MatOfPoint2f(contours.get(k)), true) * 0.02, true);
-                    List<Point> approx_list = approx.toList();
-                    if(approx_list.size() == 4 && Math.abs(Imgproc.contourArea(new MatOfPoint2f(approx))) > 1000) {
+                    final List<Point> approx_list = approx.toList();
+                    if (approx_list.size() == 4 && Math.abs(Imgproc.contourArea(new MatOfPoint2f(approx))) > 1000) {
                         double maxCosine = 0;
                         for (int m = 2; m < 5; ++m) {
                             // find the maximum cosine of the angle between joint edges
-                            double cosine = Math.abs(
-                                    angle(approx_list.get(m % 4), approx_list.get(m - 2),
+                            final double cosine =
+                                    Math.abs(angle(approx_list.get(m % 4), approx_list.get(m - 2),
                                             approx_list.get(m - 1)));
                             maxCosine = Math.max(maxCosine, cosine);
+                        }
+
+                        // if cosines of all angles are small
+                        // (all angles are ~90 degree) then write quandrange
+                        // vertices to resultant sequence
+                        if (maxCosine < Integer.valueOf(properties.getProperty("COSINE_THRESHOLD"))) {
+                            ProcessForm.storeUniqueRectangles(approx_list, squares, distThreshold);
                         }
                     }
                 }
@@ -185,11 +201,16 @@ public class GetRectangles {
     }
 
 
-    
+
     public static void main(final String[] args) {
         final GetRectangles gr = new GetRectangles();
         gr.getProperties();
-        gr.assignLabels();
+        System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+        // gr.assignLabels();
+        final List<List<Point>> squares = new ArrayList<>();
+        final Mat image = Highgui.imread("/home/abhishek/Desktop/HWR/DigitRecognition/Forms/form-0.jpg");
+        gr.findSquares(image, squares);
+        LOG.info("Squares : {}", squares);
     }
 
 }
